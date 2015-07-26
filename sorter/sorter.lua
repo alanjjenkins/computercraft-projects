@@ -73,14 +73,14 @@ function Sorter:scan()--{{{
                     end
                 else
                     if self.inputChest.pushItem(self.meInterfaceDirection, slot) then
-                        self:aePeriodicPower()
+                        -- self:aePeriodicPower()
                     end
                 end
             else
                 self.itemDB[itemuuid] = item
                 self:saveItemDB()
                 if self.inputChest.pushItem(self.meInterfaceDirection, slot) then
-                    self:aePeriodicPower()
+                    -- self:aePeriodicPower()
                 end
             end
         end
@@ -102,8 +102,8 @@ while true do
     if event == "timer" then
         if param1 == sort.scanTimer then
             sort:scan()
-        elseif param1 == sort.meInterfacePowerTimer then
-            sort:aePeriodicPower()
+        -- elseif param1 == sort.meInterfacePowerTimer then
+        --     sort:aePeriodicPower()
         end
     end
 end

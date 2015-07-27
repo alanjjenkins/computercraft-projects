@@ -11,6 +11,9 @@ shell.run("openp/github get demon012/computercraft-projects/master/sorter/sorter
 shell.run("rm item")
 shell.run("openp/github get demon012/computercraft-projects/master/sorter/item.lua item")
 
+-- get json api
+shell.run("pastebin get 4nRg9CHU json")
+
 -- run commands
 shell.run("fg sorter")
 shell.run("bg")

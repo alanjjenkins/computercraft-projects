@@ -64,7 +64,7 @@ function Sorter:scan()--{{{
         item = self.inputChest.getStackInSlot(slot)
         if item then
             itemuuid = self:getItemUUID(item)
-            if self.itemDB[itemuuid] then
+            if self.itemDB[itemuuid] then -- if in the item db
                 if self.itemDB[itemuuid].action then
                     if self.itemDB[itemuuid].action == "smelt" then
                         self.inputChest.pushItem(self.smeltChestDirection, slot)
@@ -76,7 +76,7 @@ function Sorter:scan()--{{{
                         -- self:aePeriodicPower()
                     end
                 end
-            else
+            else -- if not in the item db
                 self.itemDB[itemuuid] = item
                 self:saveItemDB()
                 if self.inputChest.pushItem(self.meInterfaceDirection, slot) then

@@ -67,6 +67,4 @@ app.use(function(err, req, res, next) {
 
 module.exports = app;
 
-if(app.get('env') === 'production'){
-    app.listen(3000);
-}
+app.listen(3000);

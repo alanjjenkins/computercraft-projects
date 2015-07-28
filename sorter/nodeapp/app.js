@@ -70,7 +70,3 @@ module.exports = app;
 if(app.get('env') === 'production'){
     app.listen(3000);
 }
-
-if(app.get('env') === 'development'){
-    app.listen(3000);
-}

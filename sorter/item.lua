@@ -105,38 +105,39 @@ while true do
         -- scroll down the database one line
         if param1 == keys.j then
             db:selectNextItem()
-            db:displayGUI()
+            print("Selected item is: " + db.selected_item)
+            -- db:displayGUI()
         -- scroll up the database one line
         elseif param1 == keys.k then
             db:selectPrevItem()
-            db:displayGUI()
+            -- db:displayGUI()
         -- scroll down the database one page
         elseif param1 == keys.pageDown then
             db:selectNextPage()
-            db:displayGUI()
+            -- db:displayGUI()
         -- scroll up the database one page
         elseif param1 == keys.pageUp then
             db:selectPrevPage()
-            db:displayGUI()
+            -- db:displayGUI()
         -- search the database
         elseif param1 == keys.slash then
             db:displaySearch()
         -- refresh the database
         elseif param1 == keys.r then
             db:loadItemDB()
-            db:displayGUI()
+            -- db:displayGUI()
         -- mark item to archive
         elseif param1 == keys.a then
             db:archiveSelectedItem()
-            db:displayGUI()
+            -- db:displayGUI()
         -- mark item to macerate
         elseif param1 == keys.m then
             db:macerateSelectedItem()
-            db:displayGUI()
+            -- db:displayGUI()
         -- mark item to smelt
         elseif param1 == keys.s then
             db:smeltSelectedItem()
-            db:displayGUI()
+            -- db:displayGUI()
         end
     end
 end

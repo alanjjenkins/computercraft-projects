@@ -1,4 +1,3 @@
-args = {...}
 ItemDB = {
     itemdb_path = 'itemdb',
     screensize = term.getSize(),
@@ -54,26 +53,26 @@ function ItemDB:displayGUI()--{{{
     end
 end--}}}
 
-
 db = ItemDB
 db:loadItemDB()
 
 db:displayGUI()
-while true do
-    local event, param1, param2, param3 = os.pullEvent()
-    if event == "timer" then
-    elseif event == "key" then
-        -- search the database
-        -- scroll up the database one line
-        -- scroll down the database one line
-        -- scroll up the database one page
-        -- scroll down the database one page
-        -- refresh the database
-        -- mark item to store
-        -- mark item to macerate
-        -- mark item to smelt
-    end
-end
+-- while true do
+--     local event, param1, param2, param3 = os.pullEvent()
+--     if event == "timer" then
+
+--     elseif event == "key" then
+--         -- search the database
+--         -- scroll up the database one line
+--         -- scroll down the database one line
+--         -- scroll up the database one page
+--         -- scroll down the database one page
+--         -- refresh the database
+--         -- mark item to store
+--         -- mark item to macerate
+--         -- mark item to smelt
+--     end
+-- end
 
 -- if item then
 --     if args[1] == 'smelt' then

@@ -1,5 +1,9 @@
 ItemDB = {
     itemdb_path = 'itemdb',
+    selected_item = 1,
+    first_item = 1,
+    last_item = 1,
+    total_item_types = 0,
 }
 ItemDB_mt = {__index = Item}
 
@@ -8,6 +12,10 @@ function ItemDB:create()--{{{
     setmetatable(new_ItemDB, ItemDB_mt)
     return new_ItemDB
 end--}}}
+function ItemDB:init()
+    _, self.last_item = term.getSize()
+    self.total_item_types = table.getn(self.itemDB)
+end
 function ItemDB:loadItemDB()--{{{
     if fs.exists(self.itemdb_path) then
         f = fs.open(self.itemdb_path, 'r')
@@ -30,7 +38,16 @@ function ItemDB:displayGUI()--{{{
 
     term.clear()
 
+    self.total_item_types = table.getn(self.itemDB)
+
     for itemid, item in pairs(self.itemDB) do
+        if selected_item == itemnum then
+            term.setBackgroundColor(colors.white)
+            term.setTextColor(colors.black)
+        else
+            term.setBackgroundColor(colors.black)
+            term.setTextColor(colors.white)
+        end
         line = line + 1
         term.setCursorPos(1, line)
         if item.name then
@@ -57,6 +74,7 @@ function ItemDB:displayGUI()--{{{
 end--}}}
 
 db = ItemDB
+db:init()
 db:loadItemDB()
 
 db:displayGUI()

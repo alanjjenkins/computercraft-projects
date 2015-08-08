@@ -41,7 +41,7 @@ function ItemDB:displayGUI()--{{{
     self.total_item_types = table.getn(self.itemDB)
 
     for itemid, item in pairs(self.itemDB) do
-        if selected_item == itemnum then
+        if self.selected_item == itemnum then
             term.setBackgroundColor(colors.white)
             term.setTextColor(colors.black)
         else

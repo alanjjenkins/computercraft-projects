@@ -41,7 +41,7 @@ function ItemDB:displayGUI()--{{{
 
         term.setCursorPos(x-1, line)
         if not item.action then
-            term.write("S")
+            term.write("A")
         else
             if item.action == "store" then
                 term.write("A")

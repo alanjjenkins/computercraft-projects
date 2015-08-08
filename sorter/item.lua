@@ -78,22 +78,32 @@ db:loadItemDB()
 db:init()
 
 db:displayGUI()
--- while true do
---     local event, param1, param2, param3 = os.pullEvent()
---     if event == "timer" then
+while true do
+    local event, param1, param2, param3 = os.pullEvent()
+    if event == "timer" then
 
---     elseif event == "key" then
---         -- search the database
---         -- scroll up the database one line
---         -- scroll down the database one line
---         -- scroll up the database one page
---         -- scroll down the database one page
---         -- refresh the database
---         -- mark item to store
---         -- mark item to macerate
---         -- mark item to smelt
---     end
--- end
+    elseif event == "key" then
+        -- scroll down the database one line
+        if param1 == keys.k then
+        -- scroll up the database one line
+        elseif param1 == keys.k then
+        -- scroll down the database one page
+        elseif param1 == keys.pageDown then
+        -- scroll up the database one page
+        elseif param1 == keys.pageUp then
+        -- search the database
+        elseif param1 == keys.slash then
+        -- refresh the database
+        elseif param1 == keys.r then
+        -- mark item to archive
+        elseif param1 == keys.a then
+        -- mark item to macerate
+        elseif param1 == keys.m then
+        -- mark item to smelt
+        elseif param1 == keys.s then
+        end
+    end
+end
 
 -- if item then
 --     if args[1] == 'smelt' then

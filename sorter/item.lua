@@ -12,10 +12,10 @@ function ItemDB:create()--{{{
     setmetatable(new_ItemDB, ItemDB_mt)
     return new_ItemDB
 end--}}}
-function ItemDB:init()
+function ItemDB:init()--{{{
     _, self.last_item = term.getSize()
     self.total_item_types = table.getn(self.itemDB)
-end
+end--}}}
 function ItemDB:loadItemDB()--{{{
     if fs.exists(self.itemdb_path) then
         f = fs.open(self.itemdb_path, 'r')
@@ -80,11 +80,11 @@ function ItemDB:selectNextItem()--{{{
         self.selected_item = self.selected_item + 1
     end
 end--}}}
-function ItemDB:selectPrevItem()
+function ItemDB:selectPrevItem()--{{{
     if self.selected_item + 1 < self.total_item_types + 1 then
         self.selected_item = self.selected_item + 1
     end
-end
+end--}}}
 
 db = ItemDB
 db:loadItemDB()
@@ -103,7 +103,7 @@ while true do
         end
     elseif event == "key" then
         -- scroll down the database one line
-        if param1 == keys.k then
+        if param1 == keys.j then
             db:selectNextItem()
             db:displayGUI()
         -- scroll up the database one line

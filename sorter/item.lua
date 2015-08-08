@@ -74,8 +74,8 @@ function ItemDB:displayGUI()--{{{
 end--}}}
 
 db = ItemDB
-db:init()
 db:loadItemDB()
+db:init()
 
 db:displayGUI()
 -- while true do

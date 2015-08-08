@@ -40,6 +40,8 @@ function ItemDB:displayGUI()--{{{
 
     self.total_item_types = table.getn(self.itemDB)
 
+    itemnum = first_item
+
     for itemid, item in pairs(self.itemDB) do
         if self.selected_item == itemnum then
             term.setBackgroundColor(colors.white)
@@ -70,9 +72,15 @@ function ItemDB:displayGUI()--{{{
                 term.write("D")
             end
         end
+        itemnum = itemnum + 1
     end
 end--}}}
-function ItemDB:selectNextItem()
+function ItemDB:selectNextItem()--{{{
+    if self.selected_item + 1 < self.total_item_types + 1 then
+        self.selected_item = self.selected_item + 1
+    end
+end--}}}
+function ItemDB:selectPrevItem()
     if self.selected_item + 1 < self.total_item_types + 1 then
         self.selected_item = self.selected_item + 1
     end

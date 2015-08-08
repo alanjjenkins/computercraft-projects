@@ -1,7 +1,5 @@
 ItemDB = {
     itemdb_path = 'itemdb',
-    ssizex = term.getSize()[0],
-    ssizey = term.getSize()[1],
 }
 ItemDB_mt = {__index = Item}
 
@@ -28,6 +26,7 @@ function ItemDB:saveItemDB()--{{{
 end--}}}
 function ItemDB:displayGUI()--{{{
     local line = 0
+    local x,y = term.getSize()
     for itemid, item in pairs(self.itemDB) do
         line = line + 1
         term.setCursorPos(1, line)
@@ -37,7 +36,7 @@ function ItemDB:displayGUI()--{{{
             term.write(itemid)
         end
 
-        term.setCursorPos(self.ssizex-1, line)
+        term.setCursorPos(x-1, line)
         if not item.action then
             term.write("S")
         else

@@ -107,7 +107,7 @@ while true do
             db:selectNextItem()
             term.clear()
             term.setCursorPos(1,1)
-            print("Selected item is: " + db.selected_item)
+            print("Selected item is: " .. db.selected_item)
             -- db:displayGUI()
         -- scroll up the database one line
         elseif param1 == keys.k then

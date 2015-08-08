@@ -12,5 +12,6 @@ shell.run("rm item")
 shell.run("openp/github get demon012/computercraft-projects/master/sorter/item.lua item")
 
 -- run commands
-shell.run("fg sorter")
-shell.run("bg")
+shell.run("fg item")
+shell.run("bg sorter")
+shell.run("bg ")

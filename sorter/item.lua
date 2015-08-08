@@ -72,35 +72,63 @@ function ItemDB:displayGUI()--{{{
         end
     end
 end--}}}
+function ItemDB:selectNextItem()
+    if self.selected_item + 1 < self.total_item_types + 1 then
+        self.selected_item = self.selected_item + 1
+    end
+end
 
 db = ItemDB
 db:loadItemDB()
 db:init()
 
+db.update_timer = os.startTimer(120)
+
 db:displayGUI()
 while true do
     local event, param1, param2, param3 = os.pullEvent()
     if event == "timer" then
-
+        if param1 == db.update_timer then
+            db:loadItemDB()
+            db:displayGUI()
+            db.update_timer = os.startTimer(120)
+        end
     elseif event == "key" then
         -- scroll down the database one line
         if param1 == keys.k then
+            db:selectNextItem()
+            db:displayGUI()
         -- scroll up the database one line
         elseif param1 == keys.k then
+            db:selectPrevItem()
+            db:displayGUI()
         -- scroll down the database one page
         elseif param1 == keys.pageDown then
+            db:selectNextPage()
+            db:displayGUI()
         -- scroll up the database one page
         elseif param1 == keys.pageUp then
+            db:selectPrevPage()
+            db:displayGUI()
         -- search the database
         elseif param1 == keys.slash then
+            db:displaySearch()
         -- refresh the database
         elseif param1 == keys.r then
+            db:loadItemDB()
+            db:displayGUI()
         -- mark item to archive
         elseif param1 == keys.a then
+            db:archiveSelectedItem()
+            db:displayGUI()
         -- mark item to macerate
         elseif param1 == keys.m then
+            db:macerateSelectedItem()
+            db:displayGUI()
         -- mark item to smelt
         elseif param1 == keys.s then
+            db:smeltSelectedItem()
+            db:displayGUI()
         end
     end
 end

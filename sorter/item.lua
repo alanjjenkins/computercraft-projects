@@ -40,7 +40,7 @@ function ItemDB:displayGUI()--{{{
 
     self.total_item_types = table.getn(self.itemDB)
 
-    itemnum = first_item
+    itemnum = self.first_item
 
     for itemid, item in pairs(self.itemDB) do
         if self.selected_item == itemnum then

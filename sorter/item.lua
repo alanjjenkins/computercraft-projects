@@ -27,6 +27,9 @@ end--}}}
 function ItemDB:displayGUI()--{{{
     local line = 0
     local x,y = term.getSize()
+
+    term.clear()
+
     for itemid, item in pairs(self.itemDB) do
         line = line + 1
         term.setCursorPos(1, line)

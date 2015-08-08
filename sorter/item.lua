@@ -105,6 +105,8 @@ while true do
         -- scroll down the database one line
         if param1 == keys.j then
             db:selectNextItem()
+            term.clear()
+            term.setCursorPos(1,1)
             print("Selected item is: " + db.selected_item)
             -- db:displayGUI()
         -- scroll up the database one line

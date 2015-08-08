@@ -34,7 +34,7 @@ function ItemDB:displayGUI()--{{{
         line = line + 1
         term.setCursorPos(1, line)
         if item.name then
-            term.write(item.name)
+            term.write(item.display_name)
         else
             term.write(itemid)
         end

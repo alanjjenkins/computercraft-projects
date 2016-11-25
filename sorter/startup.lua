@@ -14,4 +14,4 @@ shell.run("openp/github get demon012/computercraft-projects/master/sorter/item.l
 -- run commands
 shell.run("fg item")
 shell.run("bg sorter")
-shell.run("bg )
+shell.run("bg ")

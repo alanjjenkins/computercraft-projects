@@ -76,13 +76,13 @@ function ItemDB:displayGUI()--{{{
     end
 end--}}}
 function ItemDB:selectNextItem()--{{{
-    if self.selected_item + 1 < self.total_item_types + 1 then
+    if self.selected_item < self.total_item_types then
         self.selected_item = self.selected_item + 1
     end
 end--}}}
 function ItemDB:selectPrevItem()--{{{
-    if self.selected_item + 1 < self.total_item_types + 1 then
-        self.selected_item = self.selected_item + 1
+    if self.selected_item >= 2 then
+        self.selected_item = self.selected_item - 1
     end
 end--}}}
 
@@ -108,7 +108,7 @@ while true do
             term.clear()
             term.setCursorPos(1,1)
             print("Selected item is: " .. db.selected_item)
-            db:displayGUI()
+            -- db:displayGUI()
         -- scroll up the database one line
         elseif param1 == keys.k then
             db:selectPrevItem()

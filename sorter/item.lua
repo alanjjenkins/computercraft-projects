@@ -85,6 +85,15 @@ function ItemDB:selectPrevItem()--{{{
         self.selected_item = self.selected_item - 1
     end
 end--}}}
+function ItemDB:macerateSelectedItem()--{{{
+    self.itemDB[self.selected_item].action = "macerate"
+end--}}}
+function ItemDB:smeltSelectedItem()--{{{
+    self.itemDB[self.selected_item].action = "smelt"
+end--}}}
+function ItemDB:archiveSelectedItem()--{{{
+    self.itemDB[self.selected_item].action = "archive"
+end--}}}
 
 db = ItemDB
 db:loadItemDB()

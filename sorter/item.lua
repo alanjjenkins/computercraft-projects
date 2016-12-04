@@ -24,9 +24,9 @@ function ItemDB:loadItemDB()--{{{
         self.itemDB = textutils.unserialize(f.readAll())
         f.close()
         f = nil
-	for item in pairs(self.itemDB) do
+	for item, itemattrs in pairs(self.itemDB) do
 		self.itemcount = self.itemcount + 1
-		self.itemnums[self.itemcount] = item.id .. item.dmg
+		self.itemnums[self.itemcount] = itemattrs.id .. itemattrs.dmg
 	end
     else
         self.itemDB = {}

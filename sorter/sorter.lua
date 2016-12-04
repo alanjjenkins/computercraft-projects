@@ -5,7 +5,7 @@ Sorter = {
     inputChest = peripheral.wrap("bottom"),
     smeltChestDirection = "east",
     macerateChestDirection = "north",
-    meInterfaceDirection = "down",
+    meInterfaceDirection = "south",
     itemdb_path = 'itemdb',
 }
 Sorter_mt = {__index = Sorter}

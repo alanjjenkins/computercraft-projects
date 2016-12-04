@@ -11,6 +11,10 @@ shell.run("openp/github get demon012/computercraft-projects/master/sorter/sorter
 shell.run("rm item")
 shell.run("openp/github get demon012/computercraft-projects/master/sorter/item.lua item")
 
+-- update itemc
+shell.run("rm itemc")
+shell.run("openp/github get demon012/computercraft-projects/master/sorter/itemc.lua itemc")
+
 -- run commands
 shell.run("fg item")
 shell.run("bg sorter")

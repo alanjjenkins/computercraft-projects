@@ -26,7 +26,7 @@ function ItemDB:loadItemDB()--{{{
         f = nil
 	for item in pairs(self.itemDB) do
 		self.itemcount = self.itemcount + 1
-		self.itemnums[self.itemcount] = "" + item.id + item.dmg
+		self.itemnums[self.itemcount] = item.id .. item.dmg
 	end
     else
         self.itemDB = {}

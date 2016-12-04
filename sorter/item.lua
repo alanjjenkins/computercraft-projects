@@ -95,6 +95,8 @@ function ItemDB:macerateSelectedItem()--{{{
     self.itemDB[self.itemnums[self.selected_item]].action = "macerate"
 end--}}}
 function ItemDB:smeltSelectedItem()--{{{
+    print(self.selected_item)
+    print(self.itemnums[self.selected_item])
     self.itemDB[self.itemnums[self.selected_item]].action = "smelt"
 end--}}}
 function ItemDB:archiveSelectedItem()--{{{

@@ -33,7 +33,7 @@ function Sorter:aePeriodicPower()--{{{
     self.meInterfacePowerTimer = os.startTimer(30)
 end--}}}
 function Sorter:getItemUUID(item)--{{{
-    itemuuid = item.id .. ":" .. item.dmg
+    itemuuid = item.id .. ":" .. tostring(item.dmg)
     return itemuuid
 end--}}}
 function Sorter:itemInDB(itemuuid)--{{{

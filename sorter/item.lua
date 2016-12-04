@@ -17,11 +17,17 @@ function ItemDB:init()--{{{
     self.total_item_types = table.getn(self.itemDB)
 end--}}}
 function ItemDB:loadItemDB()--{{{
+    self.itemcount = 0
+    self.itemnums = {}
     if fs.exists(self.itemdb_path) then
         f = fs.open(self.itemdb_path, 'r')
         self.itemDB = textutils.unserialize(f.readAll())
         f.close()
         f = nil
+	for item in pairs(self.itemdb_path) do
+		self.itemcount = self.itemcount + 1
+		self.itemnums[self.itemcount] = "" + item.id + item.dmg
+	end
     else
         self.itemDB = {}
     end
@@ -86,13 +92,13 @@ function ItemDB:selectPrevItem()--{{{
     end
 end--}}}
 function ItemDB:macerateSelectedItem()--{{{
-    self.itemDB[self.selected_item].action = "macerate"
+    self.itemDB[self.itemnums[self.selected_item]].action = "macerate"
 end--}}}
 function ItemDB:smeltSelectedItem()--{{{
-    self.itemDB[self.selected_item].action = "smelt"
+    self.itemDB[self.itemnums[self.selected_item]].action = "smelt"
 end--}}}
 function ItemDB:archiveSelectedItem()--{{{
-    self.itemDB[self.selected_item].action = "archive"
+    self.itemDB[self.itemnums[self.selected_item]].action = "archive"
 end--}}}
 
 db = ItemDB
